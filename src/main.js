@@ -3,20 +3,14 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import './index.css'
 import router from './router'
-//import i18n from './i18n'
-//import VueFlags from "@growthbunker/vueflags"
+import i18n from './i18n'
 
-
-// import {library} from '@fortawesome/fontawesome-svg-core'
-// import {fas} from '@fortawesome/free-solid-svg-icons'
-// import {FontAweSomeIcon} from '@fortawesome/vue-fontawesome'
-
-// library.add(fas);
+import store from './store/index'
 
 
 
 
-createApp(App).use(router)
+createApp(App).use(store).use(i18n).use(router)
               .mount('#app')
               
               

@@ -23,7 +23,8 @@
     "vue-material-design-icons": "^5.0.0",
     "vue-owl-carousel": "^2.0.3",
     "vue-router": "^4.0.13",
-    "vue-slick-carousel": "^1.0.6"
+    "vue-slick-carousel": "^1.0.6",
+    "vuex": "^4.0.2"
   },
   "devDependencies": {
     "@intlify/vue-i18n-loader": "^3.0.0",
@@ -37,7 +38,7 @@
     "eslint-plugin-vue": "^7.0.0",
     "postcss": "^8.4.8",
     "tailwindcss": "^3.0.23",
-    "vue-cli-plugin-i18n": "~2.3.1"
+    "vue-cli-plugin-i18n": "^0.6.1"
   },
   "eslintConfig": {
     "root": true,

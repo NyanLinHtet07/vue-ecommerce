@@ -34,7 +34,10 @@
                 
 
                 <div class="my-4 flex justify-between">
-                    <button class="rounded-md py-2 px-3 bg-indigo-400 hover:bg-indigo-800 border-0 shadow-sm text-white text-sm transition duration-300"> <CartIcon/> </button>
+                    <button class="rounded-md py-2 px-3 bg-indigo-400 hover:bg-indigo-800 border-0 shadow-sm text-white text-sm transition duration-300"
+                             @click="cartAdd"> 
+                        <CartIcon/> 
+                    </button>
 
                     <button class="rounded-md test-pink-500 hover:text-pink-800 border-0 shadow-sm text-sm transition duration-300"> <WishIcon/> </button>
 
@@ -69,7 +72,7 @@
                      <div class=" bg-white rounded-md px-3 py-2 shadow-sm ring-blue-900
                          hover:shadow-lg transition duration-700
                          w-44  md:w-60 
-                          my-3 mx-0 h-80 md:h-auto"
+                          my-3 mx-0 "
                            v-for="product in products" :key="product.id">
 
                 <img :src="product.image" alt="" class="mx-auto h-20 w-20 md:h-40 md:w-40">
@@ -88,7 +91,10 @@
                   
 
                 <div class=" my-0 md:my-4 flex justify-between">
-                    <button class="rounded-md py-2 px-3 bg-indigo-400 hover:bg-indigo-800 border-0 shadow-sm text-white text-sm transition duration-300"> <CartIcon/> </button>
+                    <button class="rounded-md py-2 px-3 bg-indigo-400 hover:bg-indigo-800 border-0 shadow-sm text-white text-sm transition duration-300"
+                                @click="cartAdd(product)">
+                         <CartIcon/> 
+                    </button>
 
                     <button class="rounded-md text-pink-400 hover:text-pink-800 border-0 shadow-sm text-sm transition duration-300"> <WishIcon/> </button>
 
@@ -140,6 +146,13 @@ export default {
         data() {
             return {
                 products:[],
+            }
+        },
+
+        methods: {
+                cartAdd(product){
+                    //this.$store.commit("addYoCart");
+                    this.$store.dispatch("addToCart", product)
             }
         },
 

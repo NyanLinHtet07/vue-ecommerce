@@ -27,7 +27,8 @@
                 <div class=" text-gray-500 text-sm text-justify">{{ product.description }}</div>
 
                 <div class="flex justify-end my-5">
-                        <button class="py-2 px-3 mx-2 rounded-xl shadow-sm text-gray-50 bg-green-400 hover:bg-green-600 shadow-green-600/100 transition duration-300">
+                        <button class="py-2 px-3 mx-2 rounded-xl shadow-sm text-gray-50 bg-green-400 hover:bg-green-600 shadow-green-600/100 transition duration-300"
+                                    @click="cartAdd">
                              <CartIcon/>
                         </button>
 
@@ -64,6 +65,12 @@ export default {
         return {
             product: {}
         }
+    },
+
+    methods: {
+         cartAdd(){
+                    this.$store.commit("increment");
+            }
     },
 
     created() {

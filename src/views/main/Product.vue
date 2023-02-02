@@ -27,7 +27,10 @@
                
 
               <div class="my-2 flex justify-between">
-                    <button class="rounded-md py-2 px-3 bg-indigo-400 hover:bg-indigo-800 border-0 shadow-sm text-white text-sm transition duration-300"> <CartIcon/> </button>
+                    <button class="rounded-md py-2 px-3 bg-indigo-400 hover:bg-indigo-800 border-0 shadow-sm text-white text-sm transition duration-300"
+                                 @click="cartAdd"> 
+                        <CartIcon/> 
+                    </button>
 
                     <button class="rounded-md text-pink-400 hover:text-pink-800 border-0 shadow-sm text-sm transition duration-300"> <WishIcon/> </button>
 
@@ -67,6 +70,13 @@ export default {
                     WishIcon,
                     DetailIcon
                     },
+    
+    methods: {
+         cartAdd(){
+                    this.$store.commit("increment");
+            },
+        
+    },
 
     created(){
         axios.get('http://fakestoreapi.com/products')
